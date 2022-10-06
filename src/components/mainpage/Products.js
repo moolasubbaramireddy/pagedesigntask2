@@ -31,7 +31,7 @@ const Products = () => {
 
         {/* {ProductStatus === "Loading" ? <p>Loading ...</p>: null}
         {productError ? <p>{productError} </p>: null } */}
-        
+
         <div className='grid grid-cols-3 gap-8 '>
             {
                products.map((item,index) => <div key={index} >
