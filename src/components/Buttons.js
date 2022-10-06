@@ -6,7 +6,7 @@ const Buttons = () => {
     LOG IN
   </button>
   <button className='px-4 py-1 ml-2 text-white bg-emerald-500 font-medium  rounded-md border-solid border-2 border-emerald-500'>
-    START FREE
+    CART
   </button>
   </>
 }
