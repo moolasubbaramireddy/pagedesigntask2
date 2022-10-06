@@ -15,7 +15,7 @@ const Products = () => {
   useEffect(() => {
     if(ProductStatus === "idle")
     {dispatch(fetchProducts());}
-  }, [products , dispatch]);
+  }, [ProductStatus , dispatch]);
 
   if(products === undefined){
    return <div> loading...</div>
@@ -35,7 +35,7 @@ const Products = () => {
         <div className='grid grid-cols-3 gap-8 '>
             {
                products.map((item,index) => <div key={index} >
-                    <img src={item.image} />
+                    <img src={item.image} alt={`img`} />
                     <h4>Title:{item.title}</h4>
                     <p>Price: {item.price}</p>
                 </div>)
