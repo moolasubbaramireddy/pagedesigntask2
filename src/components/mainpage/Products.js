@@ -27,17 +27,20 @@ const Products = () => {
     <>
       <Navbar />
       <section>
-        <h1>Product List</h1>
+        <div className=" m-2 p-2 uppercase font-bold underline text-center">
+          <h1>Product's List</h1>
+        </div>
 
         {/* {ProductStatus === "Loading" ? <p>Loading ...</p>: null}
         {productError ? <p>{productError} </p>: null } */}
 
-        <div className='grid grid-cols-3 gap-8 '>
+        <div className='grid grid-cols-4 gap-8 justify-items-center  '>
             {
-               products.map((item,index) => <div key={index} >
-                    <img src={item.image} alt={`img`} />
-                    <h4>Title:{item.title}</h4>
-                    <p>Price: {item.price}</p>
+               products.map((item,index) => <div className="border-2 rounded-lg border-indigo-700 py-4 px-4" key={index} >
+                    <img className="h-40 w-40 border-2 rounded-lg border-blue-200 p-2 " src={item.image} alt={`img`} />
+                    <h4 className="flex"> <p className="font-medium px-1"> Title : </p>{item.title.substr(0,15)}</h4>
+                    <p className="flex"> <h2 className="font-medium px-1">Price: </h2> {item.price}</p>
+                    <button className="border-2 rounded-full hover:border-sky-900 md:border-teal-200 font-normal font-semibold bg-sky-300  ">ADD TO CART</button>
                 </div>)
             }
         </div>

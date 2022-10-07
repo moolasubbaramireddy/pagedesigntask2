@@ -1,0 +1,18 @@
+.bg{
+    background-image: url("/src/components/assets/bg1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 86vh;
+    width: 100%;
+   
+    
+}
+.body{
+    color: aliceblue;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 100%;
+    text-align: center;
+    
+}

@@ -1,12 +1,24 @@
-import React from 'react'
-import Navbar from '../navbar/Navbar'
+import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "../navbar/Navbar";
+import './Home.css';
+
 
 const Home = () => {
+  
+  
   return (
     <div>
-        <Navbar />
+      <Navbar />
+      <div className="bg ">
+          <div className="body">
+            <h1 className="uppercase text-2xl">welcome to my world </h1> 
+            <Link to='/login'> <button className="uppercase border border-lime-400 p-1 m-2  rounded-full  font-semibold">log in</button></Link>
+          </div>
+          
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
