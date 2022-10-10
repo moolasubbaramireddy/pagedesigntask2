@@ -48,7 +48,7 @@ const LogIn = () => {
 }
 
   return (
-    <div className="bg-emerald-200 flex flex-col justify-center h-screen w-full">
+    <div className=" bg-gradient-to-r from-violet-500 to-fuchsia-500 flex flex-col justify-center h-screen w-full">
       <form
         onSubmit={submitHandler}
         className="max-w-[400px] w-full mx-auto bg-gray-600 p-8 px-8 rounded-lg "
