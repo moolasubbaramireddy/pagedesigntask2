@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/ProductSlice";
 import Navbar from "../navbar/Navbar";
-import { addToCart } from "../redux/cartSlice";
-
+import { addToCart } from '../redux/cartSlice'
 
 const Products = () => {
   const products = useSelector((state) => state.products.items);
@@ -26,11 +25,12 @@ const Products = () => {
     return <div>{productError}</div>;
   }
 
-  const addProductCart = (product) =>
-   {
+  const addProductToCart = (product) => {
     //console.log(product)
-    dispatch(addToCart(product))
+    dispatch(addToCart(product));
+    
   };
+
   return (
     <>
       <Navbar />
@@ -38,9 +38,6 @@ const Products = () => {
         <div className=" m-2 p-2 uppercase font-bold underline text-center">
           <h1>Product's List</h1>
         </div>
-
-        {/* {ProductStatus === "Loading" ? <p>Loading ...</p>: null}
-        {productError ? <p>{productError} </p>: null } */}
 
         <div className="grid grid-cols-4 gap-8 justify-items-center  ">
           {products.map((item, index) => (
@@ -54,21 +51,19 @@ const Products = () => {
                 alt={`img`}
               />
               <h4 className="flex">
-                {" "}
                 <p className="font-medium px-1"> Title : </p>
                 {item.title.substr(0, 15)}
               </h4>
               <p className="flex">
-                {" "}
                 <p className="font-medium px-1">Price: </p> {item.price}
               </p>
-             
+
               <button
-                onClick={() => addProductCart(item)}
+                onClick={() => addProductToCart(item)}
                 className="p-1 rounded-lg  font-semibold bg-orange-500 "
               >
                 ADD TO CART
-               {/* <span><BiCart/></span>   */}
+                {/* <span><BiCart/></span>   */}
               </button>
             </div>
           ))}
