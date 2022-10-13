@@ -1,7 +1,18 @@
 import NavLinks from "./NavLinks";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getTotals } from "../redux/cartSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state)=>state.cart.cartItems);
+  const cartQuantity = useSelector((state)=>state.cart.cartTotalQuantity);
+
+  useEffect(() => {
+    dispatch(getTotals())
+  }, [dispatch  , cartItems])
+
   return (
     <nav className="bg-white">
       <div className="flex items-center font-medium justify-around">
@@ -18,7 +29,7 @@ const Navbar = () => {
         <div className="md:block hidden">
           
         <Link to='/cart' ><button className='px-4 py-1 ml-2 text-white bg-emerald-500 font-medium  rounded-md border-solid border-2 border-emerald-500'>
-         CART(0)
+         CART({cartQuantity})
          </button>
          </Link> 
         </div>
